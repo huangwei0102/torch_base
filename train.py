@@ -21,6 +21,8 @@ class Trainer():
         torch.manual_seed(args.seed)
         self.logger = Logger(args)
 
+        self.device = torch.device(f'cuda:{args.cuda}' if args.cuda >= 0 else 'cpu')
+
         self.train_loader = select_train_loader(args)
         self.val_loader = select_eval_loader(args)
 
