@@ -3,7 +3,7 @@ import os
 import torch
 
 
-class Recoder:
+class Recoder():
     def __init__(self):
         self.metrics = {}
 
@@ -22,7 +22,7 @@ class Recoder:
         return kvs
 
 
-class Logger:
+class Logger():
     def __init__(self, args):
         self.writer = SummaryWriter(args.model_dir)
         self.recoder = Recoder()

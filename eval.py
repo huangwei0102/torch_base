@@ -11,7 +11,7 @@ import os
 from utils.viz import label2rgb
 
 
-class Evaluator:
+class Evaluator():
     def __init__(self):
         args = prepare_test_args()
         self.args = args

@@ -14,7 +14,7 @@ from utils.logger import Logger
 from utils.torch_utils import load_match_dict
 
 
-class Trainer:
+class Trainer():
     def __init__(self):
         args = prepare_train_args()
         self.args = args
