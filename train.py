@@ -34,7 +34,8 @@ class Trainer():
             else:
                 self.model.load_state_dict(torch.load(args.load_model_path).state_dict())
 
-        self.model = torch.nn.DataParallel(self.model)
+        self.model = self.model.to(self.device)
+        #self.model = torch.nn.DataParallel(self.model)
         self.optimizer = torch.optim.Adam(self.model.parameters(), self.args.lr,
                                           betas=(self.args.momentum, self.args.beta),
                                           weight_decay=self.args.weight_decay)
